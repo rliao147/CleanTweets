@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>All Clean!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='unclean.css') }}">
+</head>
+<html>
+<body>
+    <div class="result">
+        <a href="/">
+            <span>
+                <center>Your tweets are <b>{{tweets[1]}}%</b> unclean!</center>
+            </span>
+        </a>
+    </div>
+	<center>
+        <h1>Tweets found inappropriate:</h1>
+    </center>
+    {% if tweets %}
+    {% for date, text in tweets[0].items()%}
+    <div class="tweet">
+        <h5>{{date}}</h5>
+        <center> {{text}} </center>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <br>
+</body>
+</html>

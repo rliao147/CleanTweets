@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Clean Tweets</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+</head>
+
+
+
+<html>
+    <div class="tissue"></div>
+    <div class="index">
+        <center>
+            <h1>Clean Tweets</h1>
+            <img src="https://cdn2.iconfinder.com/data/icons/minimalism/512/twitter.png" width="50px" height="50px"><br>
+    <form method="post" action="/unclean">
+            <input type="text" name="un" placeholder="Username"><br>
+            <input type="date" name="sd" required>
+            <input type="date" name="ed" required>
+            <br>
+            <a href="/unclean"><button type="submit">Submit</button></a>
+    </center>
+    </form>
+    </div>
+</html>

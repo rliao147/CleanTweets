@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Taviraj');
+
+.tweet {
+    width: 500px;
+    height: auto;
+    margin: auto;
+    margin-top:2%;
+    padding:10px;
+    background-color: #c6e0f2;
+    border-radius:30px 30px 0px 30px;
+}
+
+.result {
+    width:500px;
+    height:auto;
+    margin:auto;
+    padding:10px;
+    background-color: #f4d742;
+    border-radius:30px 30px 0px 30px;
+}
+
+body {
+    font-family: "Taviraj", serif;
+    color:#6783af;
+}

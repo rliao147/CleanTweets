@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Amiri|Kumar+One+Outline|Poiret+One');
+
+.index {
+    margin: auto;
+    padding: 10px;
+    background-color: #e3e7ed;
+    height:250px;
+    width:500px;
+    border-radius:30px;
+    box-shadow: -5px 10px rgba(128, 151, 177, 0.3);
+    margin-top:20%;
+}
+
+h1 {
+    font-family: 'Amiri', sans-serif;
+    color: #949aa3;
+    size: 20px;
+    line-height:0.7;
+}
+
+.tissue {
+    border: 100px solid #eff4ff;
+    border-bottom: 0px;
+    border-top: solid 30px transparent;
+    width:0px;
+    height:70px;
+    position:absolute;
+    right:655px;
+    top:220px;
+    z-index:-1;
+    box-shadow:  0px 0px 10px 10px rgba(128, 151, 177, 0.3);
+}
+
+.tissue:hover {
+    margin-top:1%;
+}
