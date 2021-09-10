@@ -18,6 +18,9 @@ def clean_tweet(status):
     s = status['created_at'].split(' ')
     return s[0] + ' ' + s[1] + ' ' + s[2] + ' ' + s[-1]
 
+def weird_division(n, d):
+    return n / d if d else 0
+
 def convert_date(date):
     month = {
         'Jan': 1,
@@ -56,8 +59,23 @@ def get_tweets_in_range(statuses, start=0, stop=0):
 
 def flag_tweets(handle, start=0, stop=0):
     """Takes in start and stop dates in the format: '11 13 2018' for Nov. 13 2018"""
-    status_list = api.GetUserTimeline(screen_name=handle, count=200)
-    statuses = [i.AsDict() for i in status_list]
+    timeline = api.GetUserTimeline(screen_name=handle, count=200, include_rts=False)
+    earliest_tweet = min(timeline, key=lambda x: x.id).id
+
+    while True:
+        tweets = api.GetUserTimeline(
+            screen_name=handle, max_id=earliest_tweet, count=200, include_rts=False
+        )
+        new_earliest = min(tweets, key=lambda x: x.id).id
+
+        if not tweets or new_earliest == earliest_tweet:
+            break
+        else:
+            print("getting tweet id before: ",earliest_tweet)
+            earliest_tweet = new_earliest
+            timeline += tweets
+
+    statuses = [i.AsDict() for i in timeline]
 
     start = start.split('-')
     start = convert_epoch(int(start[2]), int(start[0]), int(start[1]))
@@ -73,10 +91,10 @@ def flag_tweets(handle, start=0, stop=0):
             if word.lower() in filtered_words:
                 filtered_statuses.append(status)
 
-    return filtered_statuses, round(100*(len(filtered_statuses) / len(statuses)), 2)
+    return filtered_statuses, round(100*weird_division(len(filtered_statuses), len(statuses)), 2), len(filtered_statuses), len(statuses)
 
 def cleanedTweets(tweets):
     dateDict = dict()
     for status in tweets[0]:
         dateDict[clean_tweet(status)] = status['text']
-    return dateDict, tweets[1]
+    return dateDict, tweets[1], tweets[2], tweets[3]
