@@ -6,8 +6,15 @@ Twitter bot that allows a user to search up tweets containing profanity and inde
 
 ## Execution
 To execute the program:
-1) run the cleantweets.py file. ```python3 cleantweets.py```
-2) Copy and paste the displayed IP address to your url.
+1. Install requirement through
+
+```pip install -r requirement.txt```
+
+2. run the cleantweets.py file.
+
+```python cleantweets.py```
+
+3. Copy and paste the displayed IP address to your url.
 
 ## App Demonstration
 <img src="http://g.recordit.co/TwCmdQzmCq.gif">
