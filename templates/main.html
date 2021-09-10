@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Clean Tweets</title>
+    <title>Tweet Profanity Filter</title>
     <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
 </head>
 
@@ -10,12 +10,15 @@
     <div class="tissue"></div>
     <div class="index">
         <center>
-            <h1>Clean Tweets</h1>
+            <h1>Tweet Profanity Filter</h1>
             <img src="https://cdn2.iconfinder.com/data/icons/minimalism/512/twitter.png" width="50px" height="50px"><br>
     <form method="post" action="/unclean">
+            <label for="un">Username</label>
             <input type="text" name="un" placeholder="Username"><br>
-            <input type="date" name="sd" required>
-            <input type="date" name="ed" required>
+            <label for="sd">Start Date (M-D-Y)</label>
+            <input type="date" name="sd" placeholder="02-11-2020" required><br>
+            <label for="sd">End Date (M-D-Y)</label>
+            <input type="date" name="ed" placeholder="02-11-2021" required>
             <br>
             <a href="/unclean"><button type="submit">Submit</button></a>
     </center>
