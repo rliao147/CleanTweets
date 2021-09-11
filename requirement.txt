@@ -1,0 +1,3 @@
+python-twitter
+flask
+Jinja2==2.11.3
