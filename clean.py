@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import twitter
 import datetime
 import urllib.request, json
@@ -90,7 +92,10 @@ def flag_tweets(handle, start=0, stop=0):
         for word in status['text'].split():
             if word.lower() in filtered_words:
                 filtered_statuses.append(status)
-
+    with open('bad tweet/tweetid.json', 'a+') as f:
+        for tweet in filtered_statuses:
+            f.write(json.dumps(tweet['id']))
+            f.write('\n')
     return filtered_statuses, round(100*weird_division(len(filtered_statuses), len(statuses)), 2), len(filtered_statuses), len(statuses)
 
 def cleanedTweets(tweets):
