@@ -24,3 +24,4 @@ Maximum number of scrape-able tweet from twitter API is ~3200 tweets.
 - Ryan Liao <https://github.com/rliao147>
 - Joyce Luu <https://github.com/joyceluu>
 - Alex Yang <https://github.com/alexyang120>
+- Haikal Fouzi <https://github.com/haikalfouzi>
