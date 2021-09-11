@@ -18,6 +18,7 @@ To execute the program:
 
 ## App Demonstration
 <img src="http://g.recordit.co/TwCmdQzmCq.gif">
+Maximum number of scrape-able tweet from twitter API is ~3200 tweets.
 
 ## Authors
 - Ryan Liao <https://github.com/rliao147>
