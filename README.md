@@ -1,4 +1,4 @@
-# ICS Search Engine
+# CleanTweets
 This is a Twitter Bot application created using Python3, Flask, and the Twitter API.
 
 ## App Description
